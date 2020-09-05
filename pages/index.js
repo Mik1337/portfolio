@@ -156,7 +156,7 @@ export default function Home() {
         }
 
         .description {
-          line-height: 0;
+          line-height: 1;
           font-size: 1.5rem;
         }
 
