@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,12 +16,11 @@ export default function Home() {
             <p>Mik</p>
             <p className="description">
               Hi there, I'm a 21 year old with a degree in{" "}
-              <span className="text-gradient">
-                <b>Industrial</b> <b>Engineering</b> <b>&</b> <b>Management</b>{" "}
-              </span>
-              <br />
+              <b>Industrial Engineering & Management</b>
             </p>
-            <img src="/scrolldown.svg" className="glyph-gradient" />
+            <p>
+              <b className="glyph-gradient">⋇</b>{" "}
+            </p>
           </span>
         </h1>
 
@@ -29,31 +29,33 @@ export default function Home() {
         </div>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Skill Sets &rarr;</h3>
-            <p>Information about my skills and certificates I've earned.</p>
-          </a>
+          <Link href="/skill">
+            <a className="card">
+              <h3>Skill Set &rarr;</h3>
+              <p>Information about my skills and certificates I've earned.</p>
+            </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Work Experiences &rarr;</h3>
-            <p>Know more about the places I've worked and my role there.</p>
-          </a>
+          <Link href="work">
+            <a className="card">
+              <h3>Work Experience &rarr;</h3>
+              <p>Know more about the places I've worked and my role there.</p>
+            </a>
+          </Link>
 
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Languages &rarr;</h3>
-            <p>I know quite a few Languages, humand and computer.</p>
-          </a>
+          <Link href="languages">
+            <a className="card">
+              <h3>Languages &rarr;</h3>
+              <p>I know quite a few Languages, human and computer.</p>
+            </a>
+          </Link>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Projects &rarr;</h3>
-            <p>Listing of all the Projects I've worked on.</p>
-          </a>
+          <Link href="projects">
+            <a className="card">
+              <h3>Projects &rarr;</h3>
+              <p>List of some of the Projects I've worked on.</p>
+            </a>
+          </Link>
         </div>
       </main>
 
@@ -69,18 +71,22 @@ export default function Home() {
 
       <style jsx>{`
         .pfp {
+          position: relative;
+          border: 4px solid transparent;
+          background: linear-gradient(
+            45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d
+          );
           border-radius: 100%;
-          border: 2px solid hotpink;
-          box-shadow: 0 0 20px lightpink;
-          padding-bottom: 0px;
         }
         .container {
           background: linear-gradient(
-            lightpink,
-            white,
-            white,
-            white,
-            white,
+            Lavenderblush,
             white,
             white,
             white,
@@ -173,14 +179,29 @@ export default function Home() {
           text-decoration: none;
           border: 1px solid #eaeaea;
           border-radius: 10px;
+          border-width: 2px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
 
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: inherit;
+          transform: scale(1.1);
+          border-image-slice: 1;
+          border-radius: 10px;
+          background: linear-gradient(
+            45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d
+          );
+        }
+        .card:before {
+          display: none;
         }
 
         .card h3 {
@@ -199,17 +220,27 @@ export default function Home() {
         }
 
         .glyph-gradient {
-          width: 0.5em;
-          animation: pulse 2s infinite;
+          background: -webkit-linear-gradient(
+            45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: 3s linear 1s infinite;
         }
 
         @keyframe pulse {
           0% {
-            color: red !important;
+            background: -webkit-linear-gradient(black, white);
           }
           ,
           100% {
-            color: pink !important;
+            background: -webkit-linear-gradient(pink, red);
           }
         }
 
