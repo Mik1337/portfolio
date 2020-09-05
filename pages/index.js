@@ -11,16 +11,27 @@ export default function Home() {
       <main>
         <h1 className="title">
           <img className="pfp" src="/profile.gif" />
-          <p>Mik</p>
+          <span>
+            <p>Mik</p>
+            <p className="description">
+              Hi there, I'm a 21 year old with a degree in{" "}
+              <span>
+                <b Style="color: #D60270">Industrial</b>{" "}
+                <b Style="color: #9B4F96">Engineering</b>{" "}
+                <b Style="background: -webkit-linear-gradient(45deg, #D60270, #9B4F96, #0038A8 );-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                  &
+                </b>{" "}
+                <b Style="color: #0038A8">Management</b>{" "}
+              </span>
+              <br />
+            </p>
+            <img src="/scrolldown.svg" className="glyph-gradient" />
+          </span>
         </h1>
-        <p className="description">
-          Hi there, I'm a 21 year old with a degree in Industrial Engineering &
-          Management <br />
-        </p>
 
-      <div className="timeline">
-      <a></a>
-      </div>
+        <div className="timeline">
+          <a></a>
+        </div>
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
@@ -46,14 +57,13 @@ export default function Home() {
             className="card"
           >
             <h3>Projects &rarr;</h3>
-            <p>
-              Listing of all the Projects I've worked on.
-            </p>
+            <p>Listing of all the Projects I've worked on.</p>
           </a>
         </div>
       </main>
 
       <footer>
+        {/* <a href="https://twitter.com/cosmik_san">@cosmik_san</a> */}
         <a href="https://www.netlify.com">
           <img
             src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
@@ -67,8 +77,10 @@ export default function Home() {
           border-radius: 100%;
           border: 2px solid hotpink;
           box-shadow: 0 0 20px lightpink;
+          padding-bottom: 0px;
         }
         .container {
+          background: linear-gradient(hotpink, white, white, white, white);
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -123,7 +135,7 @@ export default function Home() {
 
         .title {
           margin: 0;
-          line-height: 1.15;
+          line-height: 0;
           font-size: 4rem;
         }
 
@@ -133,17 +145,8 @@ export default function Home() {
         }
 
         .description {
-          line-height: 1.5;
+          line-height: 0;
           font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         .grid {
@@ -190,7 +193,25 @@ export default function Home() {
           height: 1em;
         }
 
+        .glyph-gradient {
+          width: 0.5em;
+          animation: pulse 2s infinite;
+        }
+
+        @keyframe pulse {
+          0% {
+            color: red !important;
+          }
+          ,
+          100% {
+            color: pink !important;
+          }
+        }
+
         @media (max-width: 600px) {
+          .pfp {
+            width: 50vw;
+          }
           .grid {
             width: 100%;
             flex-direction: column;
