@@ -203,28 +203,6 @@ export default function Home() {
           animation: pulse 2s infinite;
         }
 
-        .text-gradient b:nth-of-type(1) {
-          // Industrial
-          color: #d60270;
-        }
-
-        .text-gradient b:nth-of-type(2) {
-          // Engineering
-          color: #9b4f96;
-        }
-
-        .text-gradient b:nth-of-type(3) {
-          // &
-          background: -webkit-linear-gradient(45deg, #d60270, #9b4f96, #0038a8);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .text-gradient b:nth-of-type(4) {
-          // Management
-          color: #0038a8;
-        }
-
         @keyframe pulse {
           0% {
             color: red !important;
@@ -242,9 +220,6 @@ export default function Home() {
           .description {
             line-height: 1.5;
             font-size: 1.5rem;
-          }
-          .text-gradient b:nth-of-type(1n) {
-            color: inherit;
           }
           .grid {
             width: 100%;
