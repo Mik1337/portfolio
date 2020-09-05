@@ -75,7 +75,17 @@ export default function Home() {
           padding-bottom: 0px;
         }
         .container {
-          background: linear-gradient(lightpink, white, white, white, white, white, white, white, white);
+          background: linear-gradient(
+            lightpink,
+            white,
+            white,
+            white,
+            white,
+            white,
+            white,
+            white,
+            white
+          );
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -232,6 +242,9 @@ export default function Home() {
           .description {
             line-height: 1.5;
             font-size: 1.5rem;
+          }
+          .text-gradient b:nth-of-type(1n) {
+            color: inherit;
           }
           .grid {
             width: 100%;
