@@ -15,13 +15,8 @@ export default function Home() {
             <p>Mik</p>
             <p className="description">
               Hi there, I'm a 21 year old with a degree in{" "}
-              <span>
-                <b Style="color: #D60270">Industrial</b>{" "}
-                <b Style="color: #9B4F96">Engineering</b>{" "}
-                <b Style="background: -webkit-linear-gradient(45deg, #D60270, #9B4F96, #0038A8 );-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-                  &
-                </b>{" "}
-                <b Style="color: #0038A8">Management</b>{" "}
+              <span className="text-gradient">
+                <b>Industrial</b> <b>Engineering</b> <b>&</b> <b>Management</b>{" "}
               </span>
               <br />
             </p>
@@ -80,7 +75,7 @@ export default function Home() {
           padding-bottom: 0px;
         }
         .container {
-          background: linear-gradient(hotpink, white, white, white, white);
+          background: linear-gradient(lightpink, white, white, white, white, white, white, white, white);
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -196,6 +191,28 @@ export default function Home() {
         .glyph-gradient {
           width: 0.5em;
           animation: pulse 2s infinite;
+        }
+
+        .text-gradient b:nth-of-type(1) {
+          // Industrial
+          color: #d60270;
+        }
+
+        .text-gradient b:nth-of-type(2) {
+          // Engineering
+          color: #9b4f96;
+        }
+
+        .text-gradient b:nth-of-type(3) {
+          // &
+          background: -webkit-linear-gradient(45deg, #d60270, #9b4f96, #0038a8);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient b:nth-of-type(4) {
+          // Management
+          color: #0038a8;
         }
 
         @keyframe pulse {
