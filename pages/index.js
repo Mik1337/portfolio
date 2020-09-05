@@ -212,6 +212,10 @@ export default function Home() {
           .pfp {
             width: 50vw;
           }
+          .description {
+            line-height: 1.5;
+            font-size: 1.5rem;
+          }
           .grid {
             width: 100%;
             flex-direction: column;
