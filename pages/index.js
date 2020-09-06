@@ -25,7 +25,7 @@ export default class Index extends React.Component {
               {/* {`${this.state.dark ? "☀️" : "🌑"}`} */}
               <button className="themeSwitch" onClick={this.themeToggle}>
                 <img
-                  width="100px"
+                  width="75vw"
                   src={`${
                     this.state.dark
                       ? "celestrial sun.png"
@@ -323,11 +323,10 @@ export default class Index extends React.Component {
           .themeSwitch {
             position: absolute;
             float: right;
-            font-size: 50px;
             border: none;
             background: inherit;
           }
-
+          
           @media (max-width: 600px) {
             .pfp {
               width: 50vw;
@@ -335,6 +334,10 @@ export default class Index extends React.Component {
             .description {
               line-height: 1.5;
               font-size: 1.5rem;
+            }
+            .themeSwitch {
+              height: 20px !important;
+              width: 20px !important;
             }
             .grid {
               width: 100%;
