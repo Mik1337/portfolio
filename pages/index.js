@@ -5,6 +5,7 @@ import Typewriter from "typewriter-effect";
 export default class Index extends React.Component {
   themeToggle = () => {
     this.setState((prevState) => ({ dark: !prevState.dark }));
+    // localStorage.setItem("state", JSON.stringify({ dark }));
   };
   state = {
     dark: true,
@@ -21,9 +22,17 @@ export default class Index extends React.Component {
           <h1 className="title">
             <img className="pfp" src="/profile.gif" />
             <span>
-              <button className="themeSwitch" onClick={this.themeToggle}>{`${
-                this.state.dark ? "☀️" : "🌑"
-              }`}</button>
+              {/* {`${this.state.dark ? "☀️" : "🌑"}`} */}
+              <button className="themeSwitch" onClick={this.themeToggle}>
+                <img
+                  width="100px"
+                  src={`${
+                    this.state.dark
+                      ? "celestrial sun.png"
+                      : "celestrial moon.png"
+                  }`}
+                />
+              </button>
               <p>
                 <Typewriter
                   options={{
@@ -52,12 +61,14 @@ export default class Index extends React.Component {
                 <b>Industrial Engineering & Management</b>
               </p>
               <p>
-                <b className="glyph-gradient">⋇</b>{" "}
+                <b o="#grid" className="glyph-gradient">
+                  ⋇
+                </b>{" "}
               </p>
             </span>
           </h1>
 
-          <div className="grid">
+          <div id="grid" className="grid">
             <Link href="/skill">
               <a className="card">
                 <h3>Skill Set &rarr;</h3>
@@ -89,7 +100,22 @@ export default class Index extends React.Component {
         </main>
 
         <footer>
-          {/* <a href="https://twitter.com/cosmik_san">@cosmik_san</a> */}
+          <a href="https://github.com/Mik1337/">
+            <img
+              src={`${
+                this.state.dark
+                  ? "GitHub-Mark-Light-64px.png"
+                  : "GitHub-Mark-64px.png"
+              }`}
+              alt="GitHub Repository"
+            />
+          </a>
+          <a href="https://twitter.com/GreaterMik">
+            <img
+              src="/Twitter_Social_Icon_Circle_Color.svg"
+              alt="Twitter Redirect"
+            />
+          </a>
           <a href="https://www.netlify.com">
             <img
               src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
@@ -101,6 +127,7 @@ export default class Index extends React.Component {
         <style jsx>{`
           .pfp {
             position: relative;
+            border-radius: 100%;
             border: 4px solid transparent;
             background: linear-gradient(
               45deg,
@@ -111,8 +138,10 @@ export default class Index extends React.Component {
               #e1306c,
               #fd1d1d
             );
-            border-radius: 100%;
+            -webkit-animation: spinright 10s infinite;
+            animation: spinright 3s infinite;
           }
+
           .light {
             background: linear-gradient(
               Lavenderblush,
@@ -124,7 +153,7 @@ export default class Index extends React.Component {
           }
           .dark {
             background: linear-gradient(#3b0114, black, black, black, black);
-            color: lavenderblush;
+            color: white;
           }
           .container {
             min-height: 100vh;
@@ -286,6 +315,9 @@ export default class Index extends React.Component {
             100% {
               background: -webkit-linear-gradient(pink, red);
             }
+          }
+
+          @keyframes spinright {
           }
 
           .themeSwitch {
