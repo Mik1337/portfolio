@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container dark">
       <Head>
-        <title>Santosh's Portfol.io</title>
+        <title>Mik's Portfol.io</title>
         <link rel="icon" href="https://i.imgur.com/CmYcjAK.png" />
       </Head>
 
@@ -13,7 +14,29 @@ export default function Home() {
         <h1 className="title">
           <img className="pfp" src="/profile.gif" />
           <span>
-            <p>Mik</p>
+            <p>
+              <Typewriter
+                options={{
+                  loop: true,
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .changeCursor(" ")
+                    .typeString("Mik")
+                    .callFunction(() => {
+                      console.log("String typed out!");
+                    })
+                    .pauseFor(8000)
+                    .deleteAll()
+                    .typeString("Santosh")
+                    .callFunction(() => {
+                      console.log("All strings were deleted");
+                    })
+                    .pauseFor(8000)
+                    .start()
+                }}
+              />{" "}
+            </p>
             <p className="description">
               Hi there, I'm a 21 year old with a degree in{" "}
               <b>Industrial Engineering & Management</b>
@@ -23,10 +46,6 @@ export default function Home() {
             </p>
           </span>
         </h1>
-
-        <div className="timeline">
-          <a></a>
-        </div>
 
         <div className="grid">
           <Link href="/skill">
@@ -84,7 +103,7 @@ export default function Home() {
           );
           border-radius: 100%;
         }
-        .container {
+        .light {
           background: linear-gradient(
             Lavenderblush,
             white,
@@ -92,6 +111,12 @@ export default function Home() {
             white,
             white
           );
+        }
+        .dark {
+          background: linear-gradient(#3b0114, black, black, black, black);
+          color: red;
+        }
+        .container {
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -170,10 +195,10 @@ export default function Home() {
           margin-top: 3rem;
         }
 
-        .card {
+        .light .card {
           margin: 1rem;
           flex-basis: 45%;
-          padding: 1.5rem;
+          padding: 1.5em;
           text-align: left;
           color: inherit;
           text-decoration: none;
@@ -183,15 +208,27 @@ export default function Home() {
           transition: color 0.15s ease, border-color 0.15s ease;
         }
 
+        .dark .card {
+          margin: 1rem;
+          flex-basis: 45%;
+          padding: 1.5em;
+          text-align: left;
+
+          border-image-slice: 1;
+
+          color: inherit;
+          text-decoration: none;
+          border: 2px solid #23272a;
+          border-radius: 10px;
+          border-width: 2px;
+          transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
         .card:hover,
         .card:focus,
         .card:active {
-          color: inherit;
           transform: scale(1.1);
-          border-image-slice: 1;
-          border-radius: 10px;
-          background: linear-gradient(
-            45deg,
+          border-image: linear-gradient(
             #405de6,
             #5851db,
             #833ab4,
@@ -199,9 +236,6 @@ export default function Home() {
             #e1306c,
             #fd1d1d
           );
-        }
-        .card:before {
-          display: none;
         }
 
         .card h3 {
@@ -231,7 +265,7 @@ export default function Home() {
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: 3s linear 1s infinite;
+          animation: 3s pulse linear 1s infinite;
         }
 
         @keyframe pulse {
