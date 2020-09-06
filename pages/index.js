@@ -324,9 +324,10 @@ export default class Index extends React.Component {
             position: absolute;
             float: right;
             border: none;
+            outline: none;
             background: inherit;
           }
-          
+
           @media (max-width: 600px) {
             .pfp {
               width: 50vw;
