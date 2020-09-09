@@ -1,0 +1,20 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.light {
+  background: linear-gradient(Lavenderblush, white, white, white, white);
+}
+
+.dark {
+  background: linear-gradient(#3b0114, black, black, black, black);
+  color: white;
+}

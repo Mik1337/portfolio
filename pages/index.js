@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import TabbedComponent from "../components/tabbedComponent";
+import Footer from "../components/Footer";
 import Typewriter from "typewriter-effect";
 
 export default class Index extends React.Component {
@@ -7,29 +9,35 @@ export default class Index extends React.Component {
     this.setState((prevState) => ({ dark: !prevState.dark }));
     // localStorage.setItem("state", JSON.stringify({ dark }));
   };
+  showTab = (display) => {
+    this.setState(() => ({ showTab: display }));
+    console.log(this.state);
+  };
   state = {
     dark: true,
+    showTab: "aboutme",
   };
   render() {
     return (
       <div className={`container ${this.state.dark ? "dark" : "light"}`}>
         <Head>
-          <title>Mik's Portfol.io</title>
+          <title>Santosh's Portfolio | Santosh [Mik]'s Portfolio</title>
           <link rel="icon" href="https://i.imgur.com/CmYcjAK.png" />
         </Head>
 
         <main>
           <h1 className="title">
-            <img className="pfp" src="/profile.gif" />
+            <img className="pfp" src="/profile/profile.gif" />
             <span>
               {/* {`${this.state.dark ? "☀️" : "🌑"}`} */}
               <button className="themeSwitch" onClick={this.themeToggle}>
                 <img
                   width="75vw"
+                  title="Theme Switch"
                   src={`${
                     this.state.dark
-                      ? "celestrial sun.png"
-                      : "celestrial moon.png"
+                      ? "/logos/celestrial sun.png"
+                      : "/logos/celestrial moon.png"
                   }`}
                 />
               </button>
@@ -42,15 +50,9 @@ export default class Index extends React.Component {
                     typewriter
                       .changeCursor(" ")
                       .typeString("Mik")
-                      .callFunction(() => {
-                        console.log("String typed out!");
-                      })
                       .pauseFor(8000)
                       .deleteAll()
                       .typeString("Santosh")
-                      .callFunction(() => {
-                        console.log("All strings were deleted");
-                      })
                       .pauseFor(8000)
                       .start();
                   }}
@@ -67,62 +69,23 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-
           <div id="grid" className="grid">
-            <Link href="/skill">
-              <a className="card">
-                <h3>Skill Set &rarr;</h3>
-                <p>Information about my skills and certificates I've earned.</p>
-              </a>
-            </Link>
-
-            <Link href="work">
-              <a className="card">
-                <h3>Work Experience &rarr;</h3>
-                <p>Know more about the places I've worked and my role there.</p>
-              </a>
-            </Link>
-
-            <Link href="languages">
-              <a className="card">
-                <h3>Languages &rarr;</h3>
-                <p>I know quite a few Languages, human and computer.</p>
-              </a>
-            </Link>
-
-            <Link href="projects">
-              <a className="card">
-                <h3>Projects &rarr;</h3>
-                <p>List of some of the Projects I've worked on.</p>
-              </a>
-            </Link>
+            <button className="button" onClick={() => this.showTab("aboutme")}>
+              about me
+            </button>
+            <button className="button" onClick={() => this.showTab("skills")}>
+              skills
+            </button>
+            <button className="button" onClick={() => this.showTab("projects")}>
+              projects
+            </button>
+            <button className="button" onClick={() => this.showTab("works")}>
+              works
+            </button>
+            <TabbedComponent display={this.state.showTab} />
           </div>
         </main>
-
-        <footer>
-          <a href="https://github.com/Mik1337/">
-            <img
-              src={`${
-                this.state.dark
-                  ? "GitHub-Mark-Light-64px.png"
-                  : "GitHub-Mark-64px.png"
-              }`}
-              alt="GitHub Repository"
-            />
-          </a>
-          <a href="https://twitter.com/GreaterMik">
-            <img
-              src="/Twitter_Social_Icon_Circle_Color.svg"
-              alt="Twitter Redirect"
-            />
-          </a>
-          <a href="https://www.netlify.com">
-            <img
-              src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
-              alt="Deploys by Netlify"
-            />
-          </a>
-        </footer>
+        <Footer dark={this.state.dark} />
 
         <style jsx>{`
           .pfp {
@@ -141,19 +104,28 @@ export default class Index extends React.Component {
             -webkit-animation: spinright 10s infinite;
             animation: spinright 3s infinite;
           }
-
-          .light {
-            background: linear-gradient(
-              Lavenderblush,
-              white,
-              white,
-              white,
-              white
-            );
+          .button {
+            font-family: "Roboto Mono", monospace;
+            width: 120px;
+            height: 30px;
+            border: 2px solid #96979c;
+            border-radius: 15px;
+            box-sizing: border-box;
+            color: inherit
+            font-size: 1rem;
+            overflow: auto;
+            transition: 0.4s ease all;
           }
-          .dark {
-            background: linear-gradient(#3b0114, black, black, black, black);
-            color: white;
+          .button:hover {
+            background: linear-gradient(
+              45deg,
+              #405de6,
+              #5851db,
+              #833ab4,
+              #c13584,
+              #e1306c,
+              #fd1d1d
+            );
           }
           .container {
             min-height: 100vh;
@@ -169,25 +141,6 @@ export default class Index extends React.Component {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-
-          footer {
-            width: 100%;
-            height: 100px;
-            border-top: 1px solid #eaeaea;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          footer img {
-            margin-left: 0.5rem;
-          }
-
-          footer a {
-            display: flex;
             justify-content: center;
             align-items: center;
           }
@@ -342,23 +295,7 @@ export default class Index extends React.Component {
             }
             .grid {
               width: 100%;
-              flex-direction: column;
             }
-          }
-        `}</style>
-
-        <style jsx global>{`
-          html,
-          body {
-            padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
-          }
-
-          * {
-            box-sizing: border-box;
           }
         `}</style>
       </div>
