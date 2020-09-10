@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .light {
   background: linear-gradient(Lavenderblush, white, white, white, white);
 }
