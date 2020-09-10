@@ -7,16 +7,24 @@ import Typewriter from "typewriter-effect";
 export default class Index extends React.Component {
   themeToggle = () => {
     this.setState((prevState) => ({ dark: !prevState.dark }));
-    // localStorage.setItem("state", JSON.stringify({ dark }));
   };
-  showTab = (display) => {
+  componentDidUpdate() {
+    localStorage.setItem("state", JSON.stringify(this.state));
+  }
+  selectTab = (display) => {
     this.setState(() => ({ showTab: display }));
-    console.log(this.state);
   };
+  componentDidMount() {
+    const state = localStorage.getItem("state");
+    if (state) {
+      this.setState(JSON.parse(state));
+    }
+  }
   state = {
     dark: true,
-    showTab: "aboutme",
+    showTab: "skills",
   };
+
   render() {
     return (
       <div className={`container ${this.state.dark ? "dark" : "light"}`}>
@@ -70,19 +78,41 @@ export default class Index extends React.Component {
             </span>
           </h1>
           <div id="grid" className="grid">
-            <button className="button" onClick={() => this.showTab("aboutme")}>
+            <button
+              className={`${
+                this.state.showTab === "aboutme" ? "button active" : "button"
+              }`}
+              onClick={() => this.selectTab("aboutme")}
+            >
               about me
             </button>
-            <button className="button" onClick={() => this.showTab("skills")}>
+            <button
+              className={`${
+                this.state.showTab === "skills" ? "button active" : "button"
+              }`}
+              onClick={() => this.selectTab("skills")}
+            >
               skills
             </button>
-            <button className="button" onClick={() => this.showTab("projects")}>
+            <button
+              className={`${
+                this.state.showTab === "projects" ? "button active" : "button"
+              }`}
+              onClick={() => this.selectTab("projects")}
+            >
               projects
             </button>
-            <button className="button" onClick={() => this.showTab("works")}>
+            <button
+              className={`${
+                this.state.showTab === "works" ? "button active" : "button"
+              }`}
+              onClick={() => this.selectTab("works")}
+            >
               works
             </button>
-            <TabbedComponent display={this.state.showTab} />
+            <span className="">
+              <TabbedComponent display={this.state.showTab} />
+            </span>
           </div>
         </main>
         <Footer dark={this.state.dark} />
@@ -92,8 +122,9 @@ export default class Index extends React.Component {
             position: relative;
             border-radius: 100%;
             border: 4px solid transparent;
+            background: rgb(131, 58, 180);
             background: linear-gradient(
-              45deg,
+              210deg,
               #405de6,
               #5851db,
               #833ab4,
@@ -105,27 +136,41 @@ export default class Index extends React.Component {
             animation: spinright 3s infinite;
           }
           .button {
-            font-family: "Roboto Mono", monospace;
             width: 120px;
             height: 30px;
             border: 2px solid #96979c;
             border-radius: 15px;
             box-sizing: border-box;
-            color: inherit
+            background: inherit;
+            color: inherit;
             font-size: 1rem;
             overflow: auto;
             transition: 0.4s ease all;
           }
+          .active,
           .button:hover {
-            background: linear-gradient(
-              45deg,
-              #405de6,
-              #5851db,
-              #833ab4,
-              #c13584,
-              #e1306c,
-              #fd1d1d
-            );
+            color: black;
+            border-radius: 100rem;
+            font-family: "Avenir Next";
+            font-size: 1rem;
+            box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+            border: solid 3px transparent;
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0)
+              ),
+              linear-gradient(
+                210deg,
+                #405de6,
+                #5851db,
+                #833ab4,
+                #c13584,
+                #e1306c,
+                #fd1d1d
+              );
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 2px 1000px 1px #fff inset;
           }
           .container {
             min-height: 100vh;
@@ -180,65 +225,11 @@ export default class Index extends React.Component {
           .grid {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
 
             max-width: 800px;
             margin-top: 3rem;
-          }
-
-          .light .card {
-            margin: 1rem;
-            flex-basis: 45%;
-            padding: 1.5em;
-            text-align: left;
-            color: inherit;
-            text-decoration: none;
-            border: 1px solid #eaeaea;
-            border-radius: 10px;
-            border-width: 2px;
-            transition: color 0.15s ease, border-color 0.15s ease;
-          }
-
-          .dark .card {
-            margin: 1rem;
-            flex-basis: 45%;
-            padding: 1.5em;
-            text-align: left;
-
-            border-image-slice: 1;
-
-            color: inherit;
-            text-decoration: none;
-            border: 2px solid #23272a;
-            border-radius: 10px;
-            border-width: 2px;
-            transition: color 0.15s ease, border-color 0.15s ease;
-          }
-
-          .card:hover,
-          .card:focus,
-          .card:active {
-            transform: scale(1.1);
-            border-image: linear-gradient(
-              #405de6,
-              #5851db,
-              #833ab4,
-              #c13584,
-              #e1306c,
-              #fd1d1d
-            );
-          }
-
-          .card h3 {
-            margin: 0 0 1rem 0;
-            font-size: 1.5rem;
-          }
-
-          .card p {
-            margin: 0;
-            font-size: 1.25rem;
-            line-height: 1.5;
           }
 
           .logo {
@@ -247,7 +238,7 @@ export default class Index extends React.Component {
 
           .glyph-gradient {
             background: -webkit-linear-gradient(
-              45deg,
+              210deg,
               #405de6,
               #5851db,
               #833ab4,
@@ -290,8 +281,8 @@ export default class Index extends React.Component {
               font-size: 1.5rem;
             }
             .themeSwitch {
-              height: 20px !important;
-              width: 20px !important;
+              height: 20px;
+              width: 20px;
             }
             .grid {
               width: 100%;
