@@ -21,72 +21,73 @@ export default function TabbedComponent(props) {
     skills: (
       <div>
         <p>
-          Hard
-          ..............................................................................
-          Skills.
-          <Accordion>
-            <AccordionItem>
+          <p Style="font-size: 12px; color: transparent">
+            So, I should be putting more effort into this, but I can't seem to.
+            If you're reading just for the lulz, don't mind me lol. If you're an
+            employee, uh Hire me pls
+          </p>
+          <Accordion allowMultipleExpanded={true} allowZeroExpanded={true}>
+            <AccordionItem uuid="hardon">
+              {/* 🥵 */}
               <AccordionItemHeading>
-                <AccordionItemButton>
-                  What harsh truths do you prefer to ignore?
-                </AccordionItemButton>
+                <AccordionItemButton>Hard Skills</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
-                <p>
-                  Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat
-                  occaecat ut occaecat consequat est minim minim esse tempor
-                  laborum consequat esse adipisicing eu reprehenderit enim.
-                </p>
+                <ul>
+                  <li>Multilingual</li>
+                  <li>Database Management</li>
+                  <li>Programming Languages</li>
+                  <small>
+                    Such as{" "}
+                    <ul>
+                      <li>Python</li>
+                      <li>JavaScript</li>
+                      <li>NodeJS</li>
+                      <li>Shell Scripts</li>
+                    </ul>
+                  </small>
+                  <li>Web Languages</li>
+                  <small>
+                    Such as{" "}
+                    <ul>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                    </ul>
+                  </small>
+                  <li>Failure Mode Analysis</li>
+                  <small>PFMEA</small>
+                  <li>Office Suite</li>
+                  <small>
+                    <ul>
+                      <li>MS Office</li>
+                      <li>Google Suite</li>
+                    </ul>
+                  </small>
+                  <li>GNU/Linux</li>
+                  <li>SEO</li>
+                </ul>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem uuid="softs">
+              {/* 😫 */}
               <AccordionItemHeading>
-                <AccordionItemButton>
-                  Is free will real or just an illusion?
-                </AccordionItemButton>
+                <AccordionItemButton>Soft Skills</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
-                <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in
-                  ut nostrud velit in irure cillum tempor laboris sed
-                  adipisicing eu esse duis nulla non.
-                </p>
+                <ul>
+                  <li>Listening</li>
+                  <li>Presentaion</li>
+                  <li>Creativity</li>
+                  <li>
+                    Can perform{" "}
+                    <a href="https://www.youtube.com/watch?v=a01QQZyl-_I">
+                      Under Preassure
+                    </a>
+                  </li>
+                </ul>
               </AccordionItemPanel>
             </AccordionItem>
           </Accordion>
-          {/* <ul>
-            <li>Multilingual</li>
-            <li>Database Management</li>
-            <li>Programming Languages</li>
-            <small>
-              Such as{" "}
-              <ul>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>NodeJS</li>
-                <li>Shell Scripts</li>
-              </ul>
-            </small>
-            <li>Web Languages</li>
-            <small>
-              Such as{" "}
-              <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-              </ul>
-            </small>
-            <li>Failure Mode Analysis</li>
-            <small>PFMEA</small>
-            <li>Office Suite</li>
-            <small>
-              <ul>
-                <li>MS Office</li>
-                <li>Google Suite</li>
-              </ul>
-            </small>
-            <li>GNU/Linux</li>
-            <li>SEO</li>
-          </ul> */}
         </p>
       </div>
     ),
@@ -104,10 +105,14 @@ export default function TabbedComponent(props) {
     works: (
       <div>
         <p>
-          I have some work experince in the manufacturing and software industry,
-          thought internships in{" "}
+          I have some work experince in the manufacturing and software industry
+          thought internships and projects in the following Companies{" "}
         </p>
-        <Accordion preExpanded="vce2020">
+        <Accordion
+          allowZeroExpanded={true}
+          allowMultipleExpanded={true}
+          // preExpanded="vce2020"
+        >
           <AccordionItem uuid="svi2017">
             <AccordionItemHeading>
               <AccordionItemButton>SV Industries</AccordionItemButton>
@@ -163,6 +168,9 @@ export default function TabbedComponent(props) {
             </AccordionItemPanel>
           </AccordionItem>
         </Accordion>
+        <p Style="text-decoration: line-through">
+          This list in incomplete, help me expand it by hiring me.
+        </p>
       </div>
     ),
   };
