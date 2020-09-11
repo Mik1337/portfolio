@@ -35,9 +35,14 @@ export default class Index extends React.Component {
 
         <main>
           <h1 className="title">
-            <img className="pfp" src="/profile/profile.gif" />
+            <video
+              className="pfp"
+              autoPlay={true}
+              controls={false}
+              loop={true}
+              src="/profile/profile.mp4"
+            />
             <span>
-              {/* {`${this.state.dark ? "☀️" : "🌑"}`} */}
               <button className="themeSwitch" onClick={this.themeToggle}>
                 <img
                   width="75vw"
@@ -119,6 +124,7 @@ export default class Index extends React.Component {
 
         <style jsx>{`
           .pfp {
+            width: 328px;
             position: relative;
             border-radius: 100%;
             border: 4px solid transparent;
