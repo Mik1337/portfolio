@@ -1,8 +1,5 @@
-import Link from "next/link";
-
 export default class Footer extends React.Component {
   render() {
-    // console.log(this.props.dark);
     return (
       <>
         <footer>
@@ -36,12 +33,6 @@ export default class Footer extends React.Component {
               alt="GitHub Repository"
             />
           </a>
-          {/* <a href="https://twitter.com/GreaterMik">
-            <img
-              src="/Twitter_Social_Icon_Circle_Color.svg"
-              alt="Twitter Redirect"
-            />
-          </a> */}
         </footer>
         <style jsx>
           {`

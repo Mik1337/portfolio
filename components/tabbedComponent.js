@@ -111,19 +111,35 @@ export default function TabbedComponent(props) {
         <Accordion
           allowZeroExpanded={true}
           allowMultipleExpanded={true}
-          // preExpanded="vce2020"
+          // preExpanded="f2019"
         >
           <AccordionItem uuid="svi2017">
             <AccordionItemHeading>
               <AccordionItemButton>SV Industries</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <ul>
-                <li>Industry: Crane manufacturing</li>
-                <li>Role: Trainee</li>
-                <li>Department: Design</li>
-                <li>Duration: 2 weeks (2017)</li>
-              </ul>
+              <div className="accordion-inner-item">
+                <ul>
+                  <li>
+                    <b>Industry</b>: Crane manufacturing
+                  </li>
+                  <li>
+                    <b>Role</b>: Trainee
+                  </li>
+                  <li>
+                    <b>Department</b>: Design
+                  </li>
+                  <li>
+                    <b>Duration</b>: 2 weeks (2017)
+                  </li>
+                  <li>
+                    <a href="http://svind.co.in/">
+                      <b>website</b>: svind.co.in
+                    </a>
+                  </li>
+                </ul>
+                {/* <img Style="accordion-inner-image" src="/logos/svi2017.png" /> */}
+              </div>
             </AccordionItemPanel>
           </AccordionItem>
           <AccordionItem uuid="sel2018">
@@ -133,24 +149,47 @@ export default function TabbedComponent(props) {
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <ul>
-                <li>Industry: Automotive and aerospace</li>
-                <li>Role: Intern</li>
-                <li>Department: Maintenence</li>
-                <li>Duration: 4 weeks (2018)</li>
-              </ul>
+              <div className="accordion-inner-item">
+                <ul>
+                  <li>
+                    <b>Industry</b>: Automotive and aerospace
+                  </li>
+                  <li>
+                    <b>Role</b>: Intern
+                  </li>
+                  <li>
+                    <b>Department</b>: Maintenence
+                  </li>
+                  <li>
+                    <b>Duration</b>: 4 weeks (2018)
+                  </li>
+                </ul>
+                {/* <img
+                  Style="accordion-inner-image"
+                  src="/logos/Sansera-Logo.png"
+                /> */}
+              </div>
             </AccordionItemPanel>
           </AccordionItem>
           <AccordionItem uuid="f2019">
             <AccordionItemHeading>
-              <AccordionItemButton>Fanlytiks </AccordionItemButton>
+              <AccordionItemButton>Fanlytiks</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <ul>
-                <li>Industry: Sports</li>
-                <li>Role: Full Stack Developer Intern</li>
-                <li>Duration: 5 months (2019)</li>
-              </ul>
+              <div className="accordion-inner-item">
+                <ul>
+                  <li>
+                    <b>Industry</b>: Sports
+                  </li>
+                  <li>
+                    <b>Role</b>: Full Stack Developer Intern
+                  </li>
+                  <li>
+                    <b>Duration</b>: 5 months (2019)
+                  </li>
+                </ul>
+                {/* <img Style="accordion-inner-image" src="/logos/f2019.png" /> */}
+              </div>
             </AccordionItemPanel>
           </AccordionItem>
           <AccordionItem uuid="vce2020">
@@ -158,13 +197,29 @@ export default function TabbedComponent(props) {
               <AccordionItemButton>Volvo CE </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <ul>
-                <li>Industry: Construction Equipment</li>
-                <li>Role: Project Intern</li>
-                <li>Project Title: PFMEA of Tier 4 Compactors</li>
-                <li>Department: Manufacturing Engineering</li>
-                <li>Duration: 8 weeks (2020)</li>
-              </ul>
+              <div className="accordion-inner-item">
+                <ul>
+                  <li>
+                    <b>Industry</b>: Construction Equipment
+                  </li>
+                  <li>
+                    <b>Role</b>: Project Intern
+                  </li>
+                  <li>
+                    <b>Project Title</b>: PFMEA of Tier 4 Compactors
+                  </li>
+                  <li>
+                    <b>Department</b>: Manufacturing Engineering
+                  </li>
+                  <li>
+                    <b>Duration</b>: 8 weeks (2020)
+                  </li>
+                </ul>
+                {/* <img
+                  Style="accordion-inner-image"
+                  src="/logos/volvo-logo-iron-mark.png"
+                /> */}
+              </div>
             </AccordionItemPanel>
           </AccordionItem>
         </Accordion>

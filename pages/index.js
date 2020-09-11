@@ -139,7 +139,7 @@ export default class Index extends React.Component {
             width: 120px;
             height: 30px;
             border: 2px solid #96979c;
-            border-radius: 15px;
+            border-radius: 100rem;
             box-sizing: border-box;
             background: inherit;
             color: inherit;
