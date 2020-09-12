@@ -49,8 +49,8 @@ export default class Index extends React.Component {
                   title="Theme Switch"
                   src={`${
                     this.state.dark
-                      ? "/logos/celestrial sun.png"
-                      : "/logos/celestrial moon.png"
+                      ? "/logos/celestrial sun.webp"
+                      : "/logos/celestrial moon.webp"
                   }`}
                 />
               </button>
@@ -265,9 +265,6 @@ export default class Index extends React.Component {
             100% {
               background: -webkit-linear-gradient(pink, red);
             }
-          }
-
-          @keyframes spinright {
           }
 
           .themeSwitch {
