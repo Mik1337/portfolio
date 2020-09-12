@@ -7,8 +7,8 @@ export default class Footer extends React.Component {
             <img
               src={`${
                 this.props.dark
-                  ? "/logos/WhatsApp_Logo_Light.png"
-                  : "/logos/WhatsApp_Logo_Dark.png"
+                  ? "/logos/WhatsApp_Logo_Light.webp"
+                  : "/logos/WhatsApp_Logo_Dark.webp"
               }`}
               title="Send me a message on WhatsApp"
               width="auto"
