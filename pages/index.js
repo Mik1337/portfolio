@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Searchable from "../components/Searchable";
 import TimeLine from "../components/TimeLine";
 import Footer from "../components/Footer";
 import Typewriter from "typewriter-effect";
