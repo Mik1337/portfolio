@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import TabbedComponent from "../components/tabbedComponent";
+import Searchable from "../components/Searchable";
+import TimeLine from "../components/TimeLine";
 import Footer from "../components/Footer";
 import Typewriter from "typewriter-effect";
 
@@ -23,13 +24,15 @@ export default class Index extends React.Component {
   state = {
     dark: true,
     showTab: "skills",
+    // value: 0,
+    // previous: 0,
   };
 
   render() {
     return (
       <div className={`container ${this.state.dark ? "dark" : "light"}`}>
         <Head>
-          <title>Santosh's Portfolio | Santosh [Mik]'s Portfolio</title>
+          <title>Santosh | Mik </title>
           <link rel="icon" href="https://i.imgur.com/CmYcjAK.png" />
         </Head>
 
@@ -82,41 +85,68 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          <div id="grid" className="grid">
-            <button
-              className={`${
-                this.state.showTab === "aboutme" ? "button active" : "button"
-              }`}
-              onClick={() => this.selectTab("aboutme")}
-            >
-              about me
-            </button>
-            <button
-              className={`${
-                this.state.showTab === "skills" ? "button active" : "button"
-              }`}
-              onClick={() => this.selectTab("skills")}
-            >
-              skills
-            </button>
-            <button
-              className={`${
-                this.state.showTab === "projects" ? "button active" : "button"
-              }`}
-              onClick={() => this.selectTab("projects")}
-            >
-              projects
-            </button>
-            <button
-              className={`${
-                this.state.showTab === "works" ? "button active" : "button"
-              }`}
-              onClick={() => this.selectTab("works")}
-            >
-              works
-            </button>
-            <span className="">
-              <TabbedComponent display={this.state.showTab} />
+          <div className="title">
+            <p>about me</p>{" "}
+            <p className="description">
+              I go by the alias of Mik online and Santosh irl, you can call me
+              whichever. I'm <b Style="color: #33c748">Vegan</b>, I love cats,
+              and I'm pretty good with a <code>*nix</code> computer.
+              {/* I like working on new and interesting fields and growing my areas of
+                expertise. Design, Automation, Data Management and Web
+                Development are areas that I've worked in extensivly. Currently,
+                I'm working with The/Nudge helping them mapout SDG-16 for India. */}
+            </p>
+          </div>
+          <div title="timeline">
+            <span className="title">
+              <p>time line</p> <p className="description"></p>
+            </span>
+            <TimeLine dark={this.state.dark} />
+          </div>
+
+          <div className="skill-interest">
+            <span>
+              <p>Skills</p>{" "}
+              <p className="description">
+                {/* <Searchable></Searchable> */}
+                {/* Top Skills
+                <br />
+                <button className="button">Programming</button>
+                <button className="button">DBMS</button>
+                <button className="button">Web Design</button>
+                <button className="button">*Nix</button> */}
+              </p>
+            </span>
+            <span>
+              <p>Interests</p>{" "}
+              <p className="description">
+                <ul>
+                  <li>
+                    <b>J</b>apanese
+                  </li>
+                  <li>
+                    <b>A</b>rt / Design
+                  </li>
+                  <li>
+                    <b>M</b>arketing
+                  </li>
+                  <li>
+                    <b>S</b>EO
+                  </li>
+                  <li>
+                    <b>T</b>-humour
+                  </li>
+                  <li>
+                    <b>A</b>nime
+                  </li>
+                  <li>
+                    <b>C</b>ats
+                  </li>
+                  <li>
+                    <b>K</b>itting
+                  </li>
+                </ul>
+              </p>
             </span>
           </div>
         </main>
@@ -257,6 +287,13 @@ export default class Index extends React.Component {
             animation: 3s pulse linear 1s infinite;
           }
 
+          .skill-interest {
+            display: none;
+            // font-size: 4rem;
+            // display: flex;
+            // justify-content: space-between;
+          }
+
           @keyframe pulse {
             0% {
               background: -webkit-linear-gradient(black, white);
@@ -289,6 +326,12 @@ export default class Index extends React.Component {
             }
             .grid {
               width: 100%;
+            }
+            .skill-interest {
+              font-size: 4rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
             }
           }
         `}</style>
