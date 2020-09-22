@@ -2,12 +2,13 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { isMobile } from "react-device-detect";
 
 export default class TimeLine extends React.Component {
   render() {
     return (
       <div className="timeline">
-        <VerticalTimeline layout="2-columns">
+        <VerticalTimeline layout="2-columns" animate={!isMobile}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
