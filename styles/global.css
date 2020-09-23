@@ -4,14 +4,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
 }
 
 .light {
@@ -21,6 +18,39 @@ ul {
 .dark {
   background: linear-gradient(#3b0114, black, black, black, black);
   color: white;
+}
+
+/* .dark ::selection,
+::-moz-selection {
+  color: black;
+  background: lightpink;
+}
+.light ::selection,
+::-moz-selection {
+  color: limegreen;
+  background: pink;
+} */
+
+ul {
+  list-style-type: none;
+  transition: 0.4s ease all;
+}
+
+ul b {
+  font-weight: normal;
+}
+
+ul:hover {
+  text-align: left;
+}
+
+.dark ul:hover b {
+  color: pink;
+}
+
+.light ul:hover b {
+  color: hotpink;
+  padding-right: 0.4em;
 }
 
 .accordion-inner-item {
