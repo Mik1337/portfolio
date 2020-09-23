@@ -1,7 +1,11 @@
 {
   "name": "portfoio",
-  "author": "Mik",
-  "version": "0.1.0",
+  "author": {
+    "name": "Mik",
+    "email": "mik23@protonmail.ch",
+    "url": "https://mik.netlify.app"
+  },
+  "version": "0.2.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -10,13 +14,18 @@
     "export": "next export",
     "deploy": "npm run build && npm run export"
   },
+  "repository": {
+    "url": "https://github.com/Mik1337/portfolio"
+  },
   "dependencies": {
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-device-detect": "^1.13.1",
     "react-dom": "16.13.1",
-    "react-horizontal-timeline": "^1.5.3",
+    "react-parallax-tilt": "^1.4.65",
     "react-vertical-timeline-component": "^3.0.2",
     "typewriter-effect": "^2.13.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.4.0"
   }
 }

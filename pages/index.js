@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
 import TimeLine from "../components/TimeLine";
+import Stats from "../components/Stats";
 import Footer from "../components/Footer";
 import Typewriter from "typewriter-effect";
 
@@ -11,9 +11,6 @@ export default class Index extends React.Component {
   componentDidUpdate() {
     localStorage.setItem("state", JSON.stringify(this.state));
   }
-  selectTab = (display) => {
-    this.setState(() => ({ showTab: display }));
-  };
   componentDidMount() {
     const state = localStorage.getItem("state");
     if (state) {
@@ -22,9 +19,6 @@ export default class Index extends React.Component {
   }
   state = {
     dark: true,
-    showTab: "skills",
-    // value: 0,
-    // previous: 0,
   };
 
   render() {
@@ -37,18 +31,28 @@ export default class Index extends React.Component {
 
         <main>
           <h1 className="title">
-            <video
+            <img
+              className="pfp"
+              alt="Profile Picture"
+              src={"/profile/profile.gif"}
+              // src="/profile/tobero.jpeg"
+              // src="/profile/kawaii.jpeg"
+              // src="/profile/almostfamous.jpeg"
+            />
+            {/* <video
               className="pfp"
               autoPlay={true}
               controls={false}
               loop={true}
-              src="/profile/profile.mp4"
-            />
+              alt="Profile Picture"
+              src="/profile/output.webm"
+            /> */}
             <span>
               <button className="themeSwitch" onClick={this.themeToggle}>
                 <img
                   width="75vw"
                   title="Theme Switch"
+                  alt="Theme Toggle Button"
                   src={`${
                     this.state.dark
                       ? "/logos/celestrial sun.webp"
@@ -56,7 +60,7 @@ export default class Index extends React.Component {
                   }`}
                 />
               </button>
-              <p>
+              <p alt="Name: Santosh or Mik">
                 <Typewriter
                   options={{
                     loop: true,
@@ -78,7 +82,11 @@ export default class Index extends React.Component {
                 <b>Industrial Engineering & Management</b>
               </p>
               <p>
-                <b o="#grid" className="glyph-gradient">
+                <b
+                  alt="Section End Indicator"
+                  o="#grid"
+                  className="glyph-gradient"
+                >
                   ⋇
                 </b>{" "}
               </p>
@@ -95,8 +103,20 @@ export default class Index extends React.Component {
                 Development are areas that I've worked in extensivly. Currently,
                 I'm working with The/Nudge helping them mapout SDG-16 for India. */}
             </p>
+            <p>
+              <b
+                alt="Section End Indicator"
+                o="#grid"
+                className="glyph-gradient"
+              >
+                ⋇
+              </b>{" "}
+            </p>
           </div>
-          <div title="timeline">
+          <div
+            title="timeline"
+            alt="Places I've worked or Studied in reverse chronological order"
+          >
             <span className="title">
               <p>time line</p> <p className="description"></p>
             </span>
@@ -105,15 +125,9 @@ export default class Index extends React.Component {
 
           <div className="skill-interest">
             <span>
-              <p>Skills</p>{" "}
+              <p alt="a list of my Skills">Skill Stats</p>{" "}
               <p className="description">
-                {/* <Searchable></Searchable> */}
-                {/* Top Skills
-                <br />
-                <button className="button">Programming</button>
-                <button className="button">DBMS</button>
-                <button className="button">Web Design</button>
-                <button className="button">*Nix</button> */}
+                <Stats dark={this.state.dark} />
               </p>
             </span>
             <span>
@@ -167,8 +181,6 @@ export default class Index extends React.Component {
               #e1306c,
               #fd1d1d
             );
-            -webkit-animation: spinright 10s infinite;
-            animation: spinright 3s infinite;
           }
           .button {
             width: 120px;
@@ -287,20 +299,10 @@ export default class Index extends React.Component {
           }
 
           .skill-interest {
-            display: none;
-            // font-size: 4rem;
-            // display: flex;
-            // justify-content: space-between;
-          }
-
-          @keyframe pulse {
-            0% {
-              background: -webkit-linear-gradient(black, white);
-            }
-            ,
-            100% {
-              background: -webkit-linear-gradient(pink, red);
-            }
+            // display: none;
+            font-size: 4rem;
+            display: flex;
+            justify-content: space-between;
           }
 
           .themeSwitch {
