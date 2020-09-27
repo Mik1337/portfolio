@@ -23,6 +23,7 @@
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "16.13.1",
     "react-parallax-tilt": "^1.4.65",
+    "react-responsive": "^8.1.0",
     "react-vertical-timeline-component": "^3.0.2",
     "typewriter-effect": "^2.13.1"
   }
