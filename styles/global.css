@@ -5,6 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -16,7 +17,7 @@ body {
 }
 
 .dark {
-  background: linear-gradient(#3b0114, black, black, black, black);
+  background: linear-gradient(#3a0012, #161819, #161819, #161819, #161819);
   color: white;
 }
 
@@ -52,4 +53,3 @@ ul:hover {
   color: hotpink;
   padding-right: 0.4em;
 }
-

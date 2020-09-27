@@ -1,8 +1,9 @@
 import Head from "next/head";
+import Typewriter from "typewriter-effect";
 import TimeLine from "../components/TimeLine";
 import Stats from "../components/Stats";
+import Interests from "../components/Interests";
 import Footer from "../components/Footer";
-import Typewriter from "typewriter-effect";
 
 export default class Index extends React.Component {
   themeToggle = () => {
@@ -30,7 +31,7 @@ export default class Index extends React.Component {
         </Head>
 
         <main>
-          <h1 className="title">
+          <h1 className="title" id="root">
             <img
               className="pfp"
               alt="Profile Picture"
@@ -87,21 +88,21 @@ export default class Index extends React.Component {
                   o="#grid"
                   className="glyph-gradient"
                 >
-                  ⋇
+                  <a href="#aboutme">⋇</a>
                 </b>{" "}
               </p>
             </span>
           </h1>
-          <div className="title">
+          <div className="title" id="aboutme" title="About Me">
             <p>about me</p>{" "}
             <p className="description">
               I go by the alias of Mik online and Santosh irl, you can call me
               whichever. I'm <b Style="color: #33c748">Vegan</b>, I love cats,
               and I'm pretty good with a <code>*nix</code> computer.
-              {/* I like working on new and interesting fields and growing my areas of
+              I like working on new and interesting fields and growing my areas of
                 expertise. Design, Automation, Data Management and Web
-                Development are areas that I've worked in extensivly. Currently,
-                I'm working with The/Nudge helping them mapout SDG-16 for India. */}
+                Development are areas that I've worked in extensivly. I'm Currently,
+                working with The/Nudge helping them mapout SDG-16 for India.
             </p>
             <p>
               <b
@@ -109,7 +110,7 @@ export default class Index extends React.Component {
                 o="#grid"
                 className="glyph-gradient"
               >
-                ⋇
+                <a href="#timeline">⋇</a>
               </b>{" "}
             </p>
           </div>
@@ -117,50 +118,22 @@ export default class Index extends React.Component {
             title="timeline"
             alt="Places I've worked or Studied in reverse chronological order"
           >
-            <span className="title">
+            <span id="timeline" className="title">
               <p>time line</p> <p className="description"></p>
             </span>
             <TimeLine dark={this.state.dark} />
           </div>
 
-          <div className="skill-interest">
-            <span>
-              <p alt="a list of my Skills">Skill Stats</p>{" "}
-              <p className="description">
-                <Stats dark={this.state.dark} />
-              </p>
-            </span>
-            <span>
-              <p>Interests</p>{" "}
-              <p className="description">
-                <ul>
-                  <li>
-                    <b>J</b>apanese
-                  </li>
-                  <li>
-                    <b>A</b>rt / Design
-                  </li>
-                  <li>
-                    <b>M</b>arketing
-                  </li>
-                  <li>
-                    <b>S</b>EO
-                  </li>
-                  <li>
-                    <b>T</b>-humour
-                  </li>
-                  <li>
-                    <b>A</b>nime
-                  </li>
-                  <li>
-                    <b>C</b>ats
-                  </li>
-                  <li>
-                    <b>K</b>itting
-                  </li>
-                </ul>
-              </p>
-            </span>
+          <div className="title" id="skills" title="Skills">
+            <p>Skill Stats</p>{" "}
+            <p className="description">
+              <Stats dark={this.state.dark} />
+            </p>
+          </div>
+
+          <div className="title" id="interests" title="Interest">
+            <p>Interests</p>
+            <Interests theme={this.state.dark ? "#151515" : "lavender"} />
           </div>
         </main>
         <Footer dark={this.state.dark} />
@@ -299,10 +272,8 @@ export default class Index extends React.Component {
           }
 
           .skill-interest {
-            // display: none;
-            font-size: 4rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
           }
 
           .themeSwitch {
@@ -329,7 +300,6 @@ export default class Index extends React.Component {
               width: 100%;
             }
             .skill-interest {
-              font-size: 4rem;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
