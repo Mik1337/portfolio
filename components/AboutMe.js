@@ -73,6 +73,8 @@ export default function AboutMe(props) {
       <style jsx>
         {`
           .fixed-witdh {
+            text-align: left;
+            padding-left: 2vw;
             max-width: 1000px;
             margin: auto;
             // border: 3px solid #73AD21;
