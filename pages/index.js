@@ -30,6 +30,16 @@ export default class Index extends React.Component {
         <Head>
           <title>Santosh | Mik </title>
           <link rel="icon" href="https://i.imgur.com/CmYcjAK.png" />
+          <meta charset="UTF-8" />
+          <meta
+            name="description"
+            content="Santosh's portfolio, a full stack developer with experience in javascript, server side rendering (ssr), client side rendering (csr), seo, database management and more..."
+          />
+          <meta name="author" content="Santosh" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
         </Head>
 
         <main>
@@ -37,7 +47,9 @@ export default class Index extends React.Component {
             <img
               className="pfp"
               alt="Profile Picture"
-              src={"/profile/profile.gif"}
+              src={
+                this.state.dark ? "/profile/dark.jpg" : "/profile/profile.gif"
+              }
               // src="/profile/tobero.jpeg"
               // src="/profile/kawaii.jpeg"
               // src="/profile/almostfamous.jpeg"
@@ -63,7 +75,7 @@ export default class Index extends React.Component {
                   }`}
                 />
               </button>
-              <p alt="Name: Santosh or Mik">
+              <p alt="Name: Santosh, also known as Mik">
                 <Typewriter
                   options={{
                     loop: true,
@@ -95,7 +107,7 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          <AboutMe />
+          <AboutMe dark={this.state.dark} />
           <TimeLine dark={this.state.dark} />
           <Stats dark={this.state.dark} />
           <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} />

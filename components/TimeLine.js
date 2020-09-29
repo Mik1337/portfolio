@@ -2,8 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { UniversityTopy, GenericWork } from "./Icons";
-
+import { UniversityTopy, GenericWork, ExternalLink } from "./Icons";
 
 export default class TimeLine extends React.Component {
   render() {
@@ -19,6 +18,7 @@ export default class TimeLine extends React.Component {
         <div className="timeline">
           <VerticalTimeline layout="2-columns">
             <VerticalTimelineElement
+              id="tn2020"
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -34,12 +34,19 @@ export default class TimeLine extends React.Component {
               iconStyle={{ background: "#ffce00", color: "white" }}
               icon={<GenericWork />}
             >
-              <h3 className="vertical-timeline-element-title">The/Nudge</h3>
+              <h3 className="vertical-timeline-element-title">
+                The/Nudge{" "}
+                <a targer="_blank" href="https://www.thenudge.org/">
+                  {" "}
+                  <ExternalLink />{" "}
+                </a>
+              </h3>
               ----------
               <h4 className="vertical-timeline-element-subtitle">Consultant</h4>
               <p>Intern</p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              id="vce2020"
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -54,7 +61,13 @@ export default class TimeLine extends React.Component {
               iconStyle={{ background: "#1251b5", color: "#fff" }}
               icon={<GenericWork />}
             >
-              <h3 className="vertical-timeline-element-title">Volvo CE</h3>
+              <h3 className="vertical-timeline-element-title">
+                Volvo CE{" "}
+                <a targer="_blank" href="https://www.volvoce.com/india/en-in">
+                  {" "}
+                  <ExternalLink dark={this.props.dark} />{" "}
+                </a>
+              </h3>
               ----------
               <h5 className="vertical-timeline-element-subtitle">
                 Project Intern
@@ -72,6 +85,7 @@ export default class TimeLine extends React.Component {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              id="f2019"
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -86,9 +100,17 @@ export default class TimeLine extends React.Component {
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<GenericWork />}
             >
-              <h3 className="vertical-timeline-element-title">Fanlytiks</h3>
+              <h3 className="vertical-timeline-element-title">
+                Fanlytiks{" "}
+                <a targer="_blank" href="fanlytiks.com/">
+                  {" "}
+                  <ExternalLink dark={this.props.dark} />{" "}
+                </a>
+              </h3>
               ----------
-              <h5 className="vertical-timeline-element-subtitle">Full Stack</h5>
+              <h5 className="vertical-timeline-element-subtitle">
+                Full Stack Developer
+              </h5>
               <p>
                 API, Feature Development, GraphQL, React.JS, Next.JS, JWT,
                 PostgresQL
@@ -101,6 +123,7 @@ export default class TimeLine extends React.Component {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              id="se2018"
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -116,13 +139,18 @@ export default class TimeLine extends React.Component {
               icon={<GenericWork />}
             >
               <h3 className="vertical-timeline-element-title">
-                Sansera Engineering
+                Sansera Engineering{" "}
+                <a targer="_blank" href="http://www.sanseraindia.com/">
+                  {" "}
+                  <ExternalLink dark={this.props.dark} />{" "}
+                </a>
               </h3>
               ----------
               <h5 className="vertical-timeline-element-subtitle">Intern</h5>
               <p>Intern in the Maintenence Department, </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              id="svi2017"
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -141,13 +169,18 @@ export default class TimeLine extends React.Component {
                 className="vertical-timeline-element-subtitle"
                 title="S.V. Material Handling Systems Pvt. Ltd."
               >
-                S.V Industry
+                S.V Industry{" "}
+                <a targer="_blank" href="http://svind.co.in/">
+                  {" "}
+                  <ExternalLink dark={this.props.dark} />{" "}
+                </a>
               </h3>
               ----------
               <h5 className="vertical-timeline-element-title">Trainee</h5>
               <p>Engineering Design</p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              id="jss2016"
               className="vertical-timeline-element--education"
               contentStyle={{
                 background: `${this.props.dark ? "#161819" : "white"}`,
@@ -163,7 +196,11 @@ export default class TimeLine extends React.Component {
               icon={<UniversityTopy />}
             >
               <h3 className="vertical-timeline-element-title">
-                JSS Academy of Technical Education - Bengaluru
+                JSS Academy of Technical Education - Bengaluru{" "}
+                <a targer="_blank" href="jssateb.ac.in/">
+                  {" "}
+                  <ExternalLink dark={this.props.dark} />{" "}
+                </a>
               </h3>
               ----------
               <h5 className="vertical-timeline-element-subtitle">

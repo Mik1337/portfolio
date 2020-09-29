@@ -63,14 +63,14 @@ a {
   font-size: 4rem;
 }
 
-.title,
-.description {
+.title {
   text-align: center;
 }
 
 .description {
   line-height: 1;
   font-size: 1.5rem;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
