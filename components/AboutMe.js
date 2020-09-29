@@ -14,23 +14,21 @@ export default function AboutMe(props) {
         </a>
         ,{" "}
         <a className="a-a" href="#f2019">
-          sports startups
+          startups
         </a>{" "}
         and{" "}
         <a className="a-a" href="#tn2020">
-          non profits.
+          non profits
         </a>{" "}
-        <small>
-          <a className="small-a" href="#timeline">
-            [my timeline]
-          </a>
-        </small>{" "}
+        <a href="#timeline" className="small-a">
+          <small>(check timeline below)</small>
+        </a>
         , with a{" "}
         <a className="a-a" href="#jss2016">
-          bachelor's degree in Industrial Engineering & Management
+          bachelor's degree in Industrial Engineering & Management.
         </a>{" "}
-        I have zero obsticles learning new tools when necessary and have had no
-        problems in communication with my peers or clients.{" "}
+        I've had zero obsticles learning new tools when necessary and have had
+        no problems in communication with my peers, colleagues or clients.{" "}
         <small>
           <a className="small-a" onClick={() => showMore(!more)}>
             {more ? "" : " show more..."}
@@ -39,7 +37,31 @@ export default function AboutMe(props) {
         {more && (
           <p>
             I'm <b Style="color: #33c748">Vegan</b>, I love cats, and I'm pretty
-            good with a <code>*nix</code> computer.
+            good with a <code>*nix</code> computer. My top 3 Manga
+            recomendations are{" "}
+            <a
+              className="a-a"
+              target="_blank"
+              href="https://www.viz.com/haikyu"
+            >
+              Haikyuu
+            </a>
+            ,{" "}
+            <a
+              className="a-a"
+              target="_blank"
+              href="https://page.kakao.com/home?seriesId=50866481"
+            >
+              Solo Leveling
+            </a>{" "}
+            &{" "}
+            <a
+              className="a-a"
+              target="_blank"
+              href="https://www.viz.com/one-punch-man"
+            >
+              One Punch Man.
+            </a>
             <small>
               <a className="small-a" onClick={() => showMore(!more)}>
                 {more ? " show less..." : ""}

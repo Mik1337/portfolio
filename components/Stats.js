@@ -7,7 +7,7 @@ export default function Stats(props) {
     <div className="main-div" className="title" id="skills" title="skills">
       <p>skills</p>{" "}
       <p className="description">
-        <Tilt gyroscope glareEnable scale={isSmallScreen ? 1.5 : 1}>
+        {isSmallScreen ? (
           <img
             src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Mik1337&title_color=ff69b4&langs_count=10&layout=compact&theme=${
               props.dark ? "dark" : "light"
@@ -15,7 +15,17 @@ export default function Stats(props) {
             alt="My top used programming, scripting or markup Languages"
             className="skill"
           />
-        </Tilt>
+        ) : (
+          <Tilt gyroscope scale={isSmallScreen ? 1.5 : 1}>
+            <img
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Mik1337&title_color=ff69b4&langs_count=10&layout=compact&theme=${
+                props.dark ? "dark" : "light"
+              }`}
+              alt="My top used programming, scripting or markup Languages"
+              className="skill"
+            />
+          </Tilt>
+        )}
         <style jsx>
           {`
             .skill {

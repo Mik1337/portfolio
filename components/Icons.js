@@ -88,16 +88,11 @@ function GenericWork() {
 }
 
 function ExternalLink() {
-  const gradientVertical = `#gradientVertical {
-    --color-stop-1: red;
-    --color-stop-2: blue;
-    --color-stop-3: green;
-  }`;
   return (
     <svg
       id="ExternalLink"
-      height="20px"
-      width="20px"
+      height="12px"
+      width="12px"
       version="1.1"
       viewBox="0 0 512 512"
     >
