@@ -1,6 +1,7 @@
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Typewriter from "typewriter-effect";
 
+
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -68,12 +69,15 @@ export default class Interests extends React.Component {
   }
 
   checkJam(jam) {
+    this.stats.interests;
     return jam.toLowerCase() === "jamstack";
   }
 
   render() {
     return (
-      <div>
+      <div className="title" id="interests" title="Interest">
+        <p>Interests</p>
+
         <span className="interest-div">
           <p
             title="Rearrange to reveal another interest of mine"
@@ -130,8 +134,8 @@ export default class Interests extends React.Component {
               )}
             </Droppable>
           </DragDropContext>
-          <p title="Hint" className="small left">
-            <b>HINT</b>: traffic damn
+          <p title="Hint" className="small">
+            <b>HINT</b>: traffic overflow
           </p>
         </span>
         <style jsx>
