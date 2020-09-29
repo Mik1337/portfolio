@@ -12,6 +12,15 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .light {
   background: linear-gradient(Lavenderblush, white, white, white, white);
 }
@@ -32,24 +41,41 @@ body {
   background: pink;
 } */
 
-ul {
-  list-style-type: none;
-  transition: 0.4s ease all;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-ul b {
-  font-weight: normal;
+.title a {
+  color: #0070f3;
+  text-decoration: none;
 }
 
-ul:hover {
-  text-align: left;
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
 }
 
-.dark ul:hover b {
-  color: pink;
+.title {
+  margin: 0;
+  line-height: 0;
+  font-size: 4rem;
 }
 
-.light ul:hover b {
-  color: hotpink;
-  padding-right: 0.4em;
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .description {
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
 }

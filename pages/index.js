@@ -1,5 +1,8 @@
 import Head from "next/head";
 import Typewriter from "typewriter-effect";
+
+import Splash from "../components/Splash";
+import AboutMe from "../components/AboutMe";
 import TimeLine from "../components/TimeLine";
 import Stats from "../components/Stats";
 import Interests from "../components/Interests";
@@ -21,7 +24,6 @@ export default class Index extends React.Component {
   state = {
     dark: true,
   };
-
   render() {
     return (
       <div className={`container ${this.state.dark ? "dark" : "light"}`}>
@@ -93,48 +95,10 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          <div className="title" id="aboutme" title="About Me">
-            <p>about me</p>{" "}
-            <p className="description">
-              I go by the alias of Mik online and Santosh irl, you can call me
-              whichever. I'm <b Style="color: #33c748">Vegan</b>, I love cats,
-              and I'm pretty good with a <code>*nix</code> computer.
-              {/* I like working on new and interesting fields and growing my areas of
-                expertise. Design, Automation, Data Management and Web
-                Development are areas that I've worked in extensivly. I'm Currently,
-                working with The/Nudge helping them mapout SDG-16 for India. */}
-            </p>
-            <p>
-              <b
-                alt="Section End Indicator"
-                o="#grid"
-                className="glyph-gradient"
-              >
-                <a href="#timeline">⋇</a>
-              </b>{" "}
-            </p>
-          </div>
-          <div
-            title="timeline"
-            alt="Places I've worked or Studied in reverse chronological order"
-          >
-            <span id="timeline" className="title">
-              <p>time line</p> <p className="description"></p>
-            </span>
-            <TimeLine dark={this.state.dark} />
-          </div>
-
-          <div className="title" id="skills" title="Skills">
-            <p>Skill Stats</p>{" "}
-            <p className="description">
-              <Stats dark={this.state.dark} />
-            </p>
-          </div>
-
-          <div className="title" id="interests" title="Interest">
-            <p>Interests</p>
-            <Interests theme={this.state.dark ? "#151515" : "lavender"} />
-          </div>
+          <AboutMe />
+          <TimeLine dark={this.state.dark} />
+          <Stats dark={this.state.dark} />
+          <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} />
         </main>
         <Footer dark={this.state.dark} />
 
@@ -192,15 +156,14 @@ export default class Index extends React.Component {
             background-clip: content-box, border-box;
             box-shadow: 2px 1000px 1px #fff inset;
           }
-          .container {
-            min-height: 100vh;
-            padding: 0 0.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
 
+          .themeSwitch {
+            position: absolute;
+            float: right;
+            border: none;
+            outline: none;
+            background: inherit;
+          }
           main {
             padding: 5rem 0;
             flex: 1;
@@ -213,47 +176,6 @@ export default class Index extends React.Component {
           a {
             color: inherit;
             text-decoration: none;
-          }
-
-          .title a {
-            color: #0070f3;
-            text-decoration: none;
-          }
-
-          .title a:hover,
-          .title a:focus,
-          .title a:active {
-            text-decoration: underline;
-          }
-
-          .title {
-            margin: 0;
-            line-height: 0;
-            font-size: 4rem;
-          }
-
-          .title,
-          .description {
-            text-align: center;
-          }
-
-          .description {
-            line-height: 1;
-            font-size: 1.5rem;
-          }
-
-          .grid {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-
-            max-width: 800px;
-            margin-top: 3rem;
-          }
-
-          .logo {
-            height: 1em;
           }
 
           .glyph-gradient {
