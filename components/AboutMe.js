@@ -13,9 +13,9 @@ export default function AboutMe(props) {
           manufacturing
         </a>
         ,{" "}
-        <a className="a-a" href="#f2019">
+        {/* <a className="a-a" href="#f2019">
           startups
-        </a>{" "}
+        </a>{" "} */}
         and{" "}
         <a className="a-a" href="#tn2020">
           non profits

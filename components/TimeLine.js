@@ -42,7 +42,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="https://www.thenudge.org/"
                 >
-                  {" "}
                   <ExternalLink />{" "}
                 </a>
               </h3>
@@ -73,7 +72,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="https://www.volvoce.com/india/en-in"
                 >
-                  {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
               </h3>
@@ -116,7 +114,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="fanlytiks.com/"
                 >
-                  {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
               </h3>
@@ -158,7 +155,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="http://www.sanseraindia.com/"
                 >
-                  {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
               </h3>
@@ -192,7 +188,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="http://svind.co.in/"
                 >
-                  {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
               </h3>
@@ -223,7 +218,6 @@ export default class TimeLine extends React.Component {
                   Style="vertical-align: super"
                   href="jssateb.ac.in/"
                 >
-                  {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
               </h3>
