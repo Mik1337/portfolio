@@ -9,9 +9,10 @@ export default class TimeLine extends React.Component {
     return (
       <div
         title="timeline"
+        id="timeline"
         alt="Places I've worked or Studied in reverse chronological order"
       >
-        <span id="timeline" className="title">
+        <span className="title">
           <p>time line</p> <p className="description"></p>
         </span>
 
@@ -36,7 +37,11 @@ export default class TimeLine extends React.Component {
             >
               <h3 className="vertical-timeline-element-title">
                 The/Nudge{" "}
-                <a targer="_blank" href="https://www.thenudge.org/">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="https://www.thenudge.org/"
+                >
                   {" "}
                   <ExternalLink />{" "}
                 </a>
@@ -63,7 +68,11 @@ export default class TimeLine extends React.Component {
             >
               <h3 className="vertical-timeline-element-title">
                 Volvo CE{" "}
-                <a targer="_blank" href="https://www.volvoce.com/india/en-in">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="https://www.volvoce.com/india/en-in"
+                >
                   {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
@@ -102,7 +111,11 @@ export default class TimeLine extends React.Component {
             >
               <h3 className="vertical-timeline-element-title">
                 Fanlytiks{" "}
-                <a targer="_blank" href="fanlytiks.com/">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="fanlytiks.com/"
+                >
                   {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
@@ -140,7 +153,11 @@ export default class TimeLine extends React.Component {
             >
               <h3 className="vertical-timeline-element-title">
                 Sansera Engineering{" "}
-                <a targer="_blank" href="http://www.sanseraindia.com/">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="http://www.sanseraindia.com/"
+                >
                   {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
@@ -170,7 +187,11 @@ export default class TimeLine extends React.Component {
                 title="S.V. Material Handling Systems Pvt. Ltd."
               >
                 S.V Industry{" "}
-                <a targer="_blank" href="http://svind.co.in/">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="http://svind.co.in/"
+                >
                   {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
@@ -197,7 +218,11 @@ export default class TimeLine extends React.Component {
             >
               <h3 className="vertical-timeline-element-title">
                 JSS Academy of Technical Education - Bengaluru{" "}
-                <a targer="_blank" href="jssateb.ac.in/">
+                <a
+                  target="_blank"
+                  Style="vertical-align: super"
+                  href="jssateb.ac.in/"
+                >
                   {" "}
                   <ExternalLink dark={this.props.dark} />{" "}
                 </a>
