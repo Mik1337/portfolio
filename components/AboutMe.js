@@ -21,7 +21,7 @@ export default function AboutMe(props) {
           non profits
         </a>{" "}
         <a href="#timeline" className="small-a">
-          <small>(check timeline below)</small>
+          <small>(timeline)</small>
         </a>
         , with a{" "}
         <a className="a-a" href="#jss2016">
