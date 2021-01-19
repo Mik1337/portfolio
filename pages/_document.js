@@ -9,7 +9,20 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <title>Santosh | Mik </title>
+          <link rel="icon" href="https://i.imgur.com/CmYcjAK.png" />
+          <meta charset="UTF-8" />
+          <meta
+            name="description"
+            content="Santosh's portfolio, a full stack developer with a nack for awesome."
+          />
+          <meta name="author" content="Santosh" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

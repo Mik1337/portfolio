@@ -33,7 +33,7 @@ export default class Index extends React.Component {
           <meta charset="UTF-8" />
           <meta
             name="description"
-            content="Santosh's portfolio, a full stack developer with experience in javascript, server side rendering (ssr), client side rendering (csr), seo, database management and more..."
+            content="Santosh's portfolio, a full stack developer with a nack for awesome."
           />
           <meta name="author" content="Santosh" />
           <meta
@@ -93,8 +93,8 @@ export default class Index extends React.Component {
                 />{" "}
               </p>
               <p className="description">
-                Hi there, I'm a 21 year old with a degree in{" "}
-                <b>Industrial Engineering & Management</b>
+                Hi there, I'm a <b>Full Stack Developer</b> with a nack for
+                awesome.
               </p>
               <p>
                 <b
@@ -107,10 +107,14 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          <AboutMe dark={this.state.dark} />
+          <div>
+            Like so, I haven't had the time to update this part, so just uh bare
+            with me for now lol.
+          </div>
+          {/* <AboutMe dark={this.state.dark} />
           <TimeLine dark={this.state.dark} />
           <Stats dark={this.state.dark} />
-          <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} />
+          <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} /> */}
         </main>
         <Footer dark={this.state.dark} />
 
