@@ -48,20 +48,12 @@ export default class Index extends React.Component {
               className="pfp"
               alt="Profile Picture"
               src={
-                this.state.dark ? "/profile/dark.jpg" : "/profile/profile.gif"
+                this.state.dark
+                  ? "/profile/profile_dark.jpg"
+                  : "/profile/profile_light.gif"
               }
-              // src="/profile/tobero.jpeg"
-              // src="/profile/kawaii.jpeg"
-              // src="/profile/almostfamous.jpeg"
             />
-            {/* <video
-              className="pfp"
-              autoPlay={true}
-              controls={false}
-              loop={true}
-              alt="Profile Picture"
-              src="/profile/output.webm"
-            /> */}
+
             <span>
               <button className="themeSwitch" onClick={this.themeToggle}>
                 <img
@@ -107,12 +99,12 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          <div>
+          {/* <div>
             Like so, I haven't had the time to update this part, so just uh bare
             with me for now lol.
-          </div>
-          {/* <AboutMe dark={this.state.dark} />
-          <TimeLine dark={this.state.dark} />
+          </div> */}
+          <AboutMe dark={this.state.dark} />
+          {/* <TimeLine dark={this.state.dark} />
           <Stats dark={this.state.dark} />
           <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} /> */}
         </main>
@@ -120,6 +112,7 @@ export default class Index extends React.Component {
 
         <style jsx>{`
           .pfp {
+            max-width: 328px;
             width: 328px;
             position: relative;
             border-radius: 100%;

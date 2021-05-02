@@ -6,29 +6,9 @@ export default function AboutMe(props) {
     <div className="title" id="aboutme" title="About Me">
       <p>about me</p>{" "}
       <p className="description fixed-witdh">
-        I'm a <b>Full Stack Engineer</b> with a diverse work experience spanning
-        multiple industries, such as{" "}
-        <a className="a-a" href="#vce2020">
-          {" "}
-          manufacturing
-        </a>
-        ,{" "}
-        <a className="a-a" href="#timeline">
-          startups
-        </a>{" "}
-        and{" "}
-        <a className="a-a" href="#tn2020">
-          non profits
-        </a>{" "}
-        <a href="#timeline" className="small-a">
-          <small>(timeline)</small>
-        </a>
-        , with a{" "}
-        <a className="a-a" href="#jss2016">
-          bachelor's degree in Industrial Engineering & Management.
-        </a>{" "}
-        I've had zero obsticles learning new tools when necessary and have had
-        no problems in communication with my peers, colleagues or clients.{" "}
+        Earned a degree in Industrial Engineering and Management and am keen on
+        learning new technologies that excite me. I have experience working in
+        various fields across tech, manufacturing and NGOs. ＼(★^∀^★)／{" "}
         <small>
           <a className="small-a" onClick={() => showMore(!more)}>
             {more ? "" : " show more..."}
@@ -58,9 +38,9 @@ export default function AboutMe(props) {
             <a
               className="a-a"
               target="_blank"
-              href="https://www.viz.com/one-punch-man"
+              href="https://www.viz.com/one-piece"
             >
-              One Punch Man.
+              One Piece.
             </a>
             <small>
               <a className="small-a" onClick={() => showMore(!more)}>
