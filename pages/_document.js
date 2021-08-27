@@ -15,9 +15,9 @@ class MyDocument extends Document {
           <meta charset="UTF-8" />
           <meta
             name="description"
-            content="Santosh's portfolio, a full stack developer with a nack for awesome."
+            content="Mik's portfolio, a full stack developer with a nack for awesome."
           />
-          <meta name="author" content="Santosh" />
+          <meta name="author" content="Mik" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

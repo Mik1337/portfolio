@@ -33,9 +33,9 @@ export default class Index extends React.Component {
           <meta charset="UTF-8" />
           <meta
             name="description"
-            content="Santosh's portfolio, a full stack developer with a nack for awesome."
+            content="Mik's portfolio, a full stack developer with a nack for awesome."
           />
-          <meta name="author" content="Santosh" />
+          <meta name="author" content="Mik" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -67,7 +67,7 @@ export default class Index extends React.Component {
                   }`}
                 />
               </button>
-              <p alt="Name: Santosh, also known as Mik">
+              <p alt="Name: Mik">
                 <Typewriter
                   options={{
                     loop: true,
@@ -76,9 +76,6 @@ export default class Index extends React.Component {
                     typewriter
                       .changeCursor(" ")
                       .typeString("Mik")
-                      .pauseFor(8000)
-                      .deleteAll()
-                      .typeString("Santosh")
                       .pauseFor(8000)
                       .start();
                   }}
@@ -99,21 +96,15 @@ export default class Index extends React.Component {
               </p>
             </span>
           </h1>
-          {/* <div>
-            Like so, I haven't had the time to update this part, so just uh bare
-            with me for now lol.
-          </div> */}
+
           <AboutMe dark={this.state.dark} />
-          {/* <TimeLine dark={this.state.dark} />
-          <Stats dark={this.state.dark} />
-          <Interests theme={this.state.dark ? "#2C2F33" : "lavender"} /> */}
         </main>
         <Footer dark={this.state.dark} />
 
         <style jsx>{`
           .pfp {
-            max-width: 328px;
-            width: 328px;
+            max-width: 250px;
+            width: 250px;
             position: relative;
             border-radius: 100%;
             border: 4px solid transparent;
