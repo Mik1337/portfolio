@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Faustina&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 @import url("~react-tree-graph/dist/style.css");
+
+:root {
+  --red: #ed4245;
+  --green: #57f287;
+  --yellow: #fee75c;
+  --fuchsia: #eb459e;
+  --black: #000000;
+
+  --light: #ffffff;
+  --darklight: #fff0f5;
+  --dark: #3a0012;
+  --lightdark: #161819;
+}
+
 html,
 body {
   padding: 0;
@@ -25,11 +39,23 @@ main {
 }
 
 .light {
-  background: linear-gradient(Lavenderblush, white, white, white, white);
+  background: linear-gradient(
+    var(--darklight),
+    var(--light),
+    var(--light),
+    var(--light),
+    var(--light)
+  );
 }
 
 .dark {
-  background: linear-gradient(#3a0012, #161819, #161819, #161819, #161819);
+  background: linear-gradient(
+    var(--dark),
+    var(--lightdark),
+    var(--lightdark),
+    var(--lightdark),
+    var(--lightdark)
+  );
   color: white;
 }
 
